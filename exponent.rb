@@ -1,19 +1,11 @@
 def power(base, exponent)
   return nil if exponent < 0
   return 1 if exponent == 0
-  total = []
-  exponent.times { total << base }
-  new_total = base
+  total = base
   counter = 1
-  while counter != (total.count)
+  while counter != exponent
     counter += 1
-    if counter == 1
-      new_total *= new_total
-    else
-      new_total = new_total *= base
-    end
+    total *= base
   end
-  new_total
+  total
 end
-
-puts power(4,1)
